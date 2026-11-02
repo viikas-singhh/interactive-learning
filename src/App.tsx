@@ -20,9 +20,9 @@ export function App() {
     progressPercentage
   } = useWorksheetProgress();
 
-  // Navigation: start directly on interactive page 39 or 20
+  // Navigation: start directly on Page 1 of the workbook
   const [currentTab, setCurrentTab] = useState<'worksheet-detail' | 'worksheets' | 'progress'>('worksheet-detail');
-  const [currentPageNumber, setCurrentPageNumber] = useState<number>(39);
+  const [currentPageNumber, setCurrentPageNumber] = useState<number>(1);
   const [isCertificateOpen, setIsCertificateOpen] = useState(false);
 
   const handleOpenPage = (pageNum: number) => {

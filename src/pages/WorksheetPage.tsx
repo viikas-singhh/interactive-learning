@@ -61,7 +61,7 @@ export const WorksheetPage: React.FC<Props> = ({
   const [showDrawer, setShowDrawer] = useState(false);
   const [filterOnlyWorksheets, setFilterOnlyWorksheets] = useState(false);
 
-  const pageEntry: PageEntry = ALL_64_PAGES.find(p => p.pageNumber === currentPageNumber) || ALL_64_PAGES[38]; // default Page 39
+  const pageEntry: PageEntry = ALL_64_PAGES.find(p => p.pageNumber === currentPageNumber) || ALL_64_PAGES[0]; // default Page 1
 
   const prevPage = currentPageNumber > 1 ? currentPageNumber - 1 : null;
   const nextPage = currentPageNumber < 64 ? currentPageNumber + 1 : null;
