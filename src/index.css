@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Fredoka', 'Quicksand', system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    background-color: #fdfbf7;
+    background-image: 
+      radial-gradient(#fde68a 0.75px, transparent 0.75px),
+      radial-gradient(#93c5fd 0.75px, #fdfbf7 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', cursive, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom interactive effects */
+.bouncy-btn {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.15);
+}
+.bouncy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.15);
+}
+.bouncy-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.paper-sheet {
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  border: 2px solid #f1f5f9;
+  position: relative;
+}
+
+.notebook-lines {
+  background-image: repeating-linear-gradient(transparent, transparent 27px, #e2e8f0 28px);
+  line-height: 28px;
+}
+
+/* Custom festive & playful pulse */
+@keyframes star-twinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.18) rotate(15deg); opacity: 0.85; }
+}
+
+.animate-twinkle {
+  animation: star-twinkle 2.5s infinite ease-in-out;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
