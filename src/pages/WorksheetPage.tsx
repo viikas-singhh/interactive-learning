@@ -153,6 +153,7 @@ export const WorksheetPage: React.FC<Props> = ({
             data={currentData}
             onUpdate={handleFieldUpdate}
             isCompleted={completed}
+            onComplete={handleComplete}
           />
         );
     }
