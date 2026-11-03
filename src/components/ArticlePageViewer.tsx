@@ -93,6 +93,30 @@ export const ArticlePageViewer: React.FC<Props> = ({
           </p>
         </div>
 
+        {/* Article Featured Photo / Illustration */}
+        {article.image && (
+          <div className="rounded-2xl border-2 sm:border-3 border-slate-900 bg-white overflow-hidden shadow-md transition-shadow hover:shadow-lg">
+            <div className="relative bg-slate-900/5 flex items-center justify-center overflow-hidden max-h-[380px] sm:max-h-[440px]">
+              <img
+                src={article.image.src}
+                alt={article.image.alt}
+                className="w-full h-auto max-h-[380px] sm:max-h-[440px] object-contain sm:object-cover object-top"
+                loading="eager"
+              />
+              <span className="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full bg-slate-900/80 text-white font-black text-[10px] sm:text-xs backdrop-blur-xs flex items-center gap-1 shadow-xs">
+                <span>📸</span>
+                <span>Original Archive Photo</span>
+              </span>
+            </div>
+            {article.image.caption && (
+              <div className="px-4 py-2.5 bg-slate-50 border-t-2 border-slate-900 flex items-center gap-2.5 text-xs sm:text-sm font-bold text-slate-800">
+                <span className="text-amber-600 shrink-0 text-base">📌</span>
+                <span className="leading-snug">{article.image.caption}</span>
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Highlights & Lesson Banner */}
         <div className="rounded-2xl border-2 border-amber-500 bg-linear-to-r from-amber-50 to-orange-50 p-4 sm:p-5 shadow-xs space-y-2">
           <div className="flex items-center gap-2 text-amber-900 font-black text-sm">

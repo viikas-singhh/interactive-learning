@@ -7,6 +7,12 @@ export interface QuizQuestion {
   explanation: string;
 }
 
+export interface ArticleImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface ArticlePageData {
   pageNumber: number;
   title: string;
@@ -18,6 +24,7 @@ export interface ArticlePageData {
   englishSummary: string;
   keyTakeaways: string[];
   funFactOrMoral?: string;
+  image?: ArticleImage;
   quiz: QuizQuestion[];
 }
 
@@ -1365,6 +1372,11 @@ export const ARTICLE_PAGES_CONTENT: Record<number, ArticlePageData> = {
     section: 'रियल हिरोज',
     categoryTag: 'रियल हिरोज',
     quickSummary: 'True story of Captain Smit Machhar who remained calm despite severe injuries in a cockpit emergency and saved hundreds of lives.',
+    image: {
+      src: '/images/articles/p57_captain_smit_machhar.png',
+      alt: 'Captain Smit Machhar & flight FZ1073',
+      caption: 'कॅप्टन स्मित मच्छार : संकटातही न डगमगणारे धैर्य आणि विमानाचे सुरक्षित लँडिंग (Captain Smit Machhar & FZ1073)'
+    },
     marathiParagraphs: [
       '३० सप्टेंबर २०२६ रोजी flydubai च्या FZ1073 या विमानात हवेत हजारो फूट उंचावर असताना अचानक भयानक संकट निर्माण झाले. कॉकपिटमध्ये झालेल्या हल्ल्यात भारतीय कॅप्टन स्मित मच्छार गंभीर जखमी झाले.',
       'अत्यंत धोकादायक परिस्थितीत विमानाची उंची झपाट्याने कमी होत असतानाही कॅप्टन मच्छार यांनी धीर सोडला नाही. जखमी अवस्थेतही त्यांनी विमानाचे नियंत्रण सांभाळले आणि सहकाऱ्यांच्या मदतीने विमानाला सौदी अरेबियातील तबूक येथे सुरक्षित उतरवून शेकडो प्रवाशांचे प्राण वाचवले.',
@@ -1415,6 +1427,11 @@ export const ARTICLE_PAGES_CONTENT: Record<number, ArticlePageData> = {
     section: 'रियल हिरोज',
     categoryTag: 'रियल हिरोज',
     quickSummary: 'From studying under a kerosene lamp in Tadwale village to becoming an IPS officer through sheer determination.',
+    image: {
+      src: '/images/articles/p58_ips_sharan_kamble.png',
+      alt: 'IPS Sharan Kamble & his hardworking parents',
+      caption: 'कंदिलाच्या प्रकाशातून IPS अधिकारी होण्याचा शरण कांबळे यांचा प्रेरणादायी प्रवास (IPS Sharan Kamble)'
+    },
     marathiParagraphs: [
       'सोलापूर जिल्ह्यातील तडवळे या लहानशा खेड्यात जन्मलेले शरण कांबळे यांची ही अद्भूत प्रेरणादायी कहाणी आहे. त्यांचे आई-वडील रोजंदारीवर काम करून व भाजीपाला विकून संसाराचा गाडा हाकत असत.',
       'घरात विजेची सोय नसल्यामुळे शरण कांबळे रात्री रॉकेलच्या कंदिलाच्या प्रकाशात अभ्यास करत. अकरावी-बारावीसाठी दररोज सुमारे १२ किलोमीटर पायी चालत शाळेत जावे लागायचे. परंतु त्यांनी कधीही परिस्थितीला दोष दिला नाही.',
@@ -1465,6 +1482,11 @@ export const ARTICLE_PAGES_CONTENT: Record<number, ArticlePageData> = {
     section: 'रियल हिरोज',
     categoryTag: 'रियल हिरोज',
     quickSummary: 'Ecologist Sushmita Krishnan innovated a green process to convert lake-choking water hyacinth into handmade paper.',
+    image: {
+      src: '/images/articles/p59_sushmita_krishnan.png',
+      alt: 'Sushmita Krishnan & eco-friendly paper from water hyacinth',
+      caption: 'सुष्मिता कृष्णन : तलावातील जलपर्णी तणापासून हस्तनिर्मित पर्यावरणपूरक कागद (Sushmita Krishnan Eco-Paper)'
+    },
     marathiParagraphs: [
       'तलावातील जलपर्णी ही वनस्पती सूर्यप्रकाश आणि ऑक्सिजन रोखून जलचरांना धोका निर्माण करते. त्रिची, तामिळनाडू येथील २५ वर्षीय पर्यावरण शास्त्रज्ञ सुष्मिता कृष्णन यांनी या समस्येकडे वेगळ्या दृष्टीने पाहिले.',
       'जलपर्णी कचरा मानण्याऐवजी त्यांनी त्यापासून हस्तनिर्मित पर्यावरणपूरक कागद तयार करण्याचा यशस्वी प्रयोग केला. लाकडाच्या लगद्यासाठी ६०% सोडा लागतो, तर जलपर्णीसाठी फक्त ६% सोड्याची गरज असते!',
@@ -1515,6 +1537,11 @@ export const ARTICLE_PAGES_CONTENT: Record<number, ArticlePageData> = {
     section: 'रियल हिरोज',
     categoryTag: 'रियल हिरोज',
     quickSummary: 'Polytechnic student Sarvesh Sharma engineered defense surveillance drones for the Indian Army, securing a ₹3.5 crore grant.',
+    image: {
+      src: '/images/articles/p60_sarvesh_sharma.png',
+      alt: 'Sarvesh Sharma & the Rudra Edge defense drone',
+      caption: 'सर्वेश शर्मा : भारतीय सैन्यासाठी पुठ्ठ्यापासून बनवलेला "रुद्र एज टी-१" ड्रोन (Sarvesh Sharma & Rudra Drone)'
+    },
     marathiParagraphs: [
       'हिमाचल प्रदेशातील सर्वेश शर्मा या विद्यार्थ्याने आपल्या कल्पकतेच्या जोरावर संरक्षण क्षेत्रात भारताचे नाव उज्ज्वल केले आहे. सर्वेशचे वडील रोजंदारीवर काम करतात व आई गृहिणी आहे.',
       'हमीरपूर पॉलिटेक्निकमध्ये शिकताना त्याने पुठ्ठ्यापासून (Cardboard) बनवलेल्या ड्रोनच्या साहाय्याने आयआयटी जोधपूरच्या स्पर्धेत १० लाख रुपयांचे पारितोषिक जिंकले.',
@@ -1565,6 +1592,11 @@ export const ARTICLE_PAGES_CONTENT: Record<number, ArticlePageData> = {
     section: 'अध्यात्म',
     categoryTag: 'अध्यात्म',
     quickSummary: 'Life lessons from the mythological Samudra Manthan: poison precedes nectar, and struggle precedes true mastery.',
+    image: {
+      src: '/images/articles/p61_samudra_manthan.png',
+      alt: 'Youth collaboration & Samudra Manthan lessons',
+      caption: 'समुद्रमंथन : नवनिर्माणाची सुरुवात मंथनातूनच होते - युवा पिढीचे विचार मंथन (Samudra Manthan Youth Dialogue)'
+    },
     marathiParagraphs: [
       'पुराणातील समुद्रमंथनाच्या कथेत देव आणि दानवांनी अमृतासाठी समुद्र घुसळला. परंतु मंथन सुरू झाल्यावर सर्वात आधी अमृत बाहेर आले नाही, तर अत्यंत दाहक हलाहल विष बाहेर आले. भगवान शंकरांनी ते विष कंठात धारण केले आणि त्यानंतरच १४ अमूल्य रत्ने व शेवटी अमृत प्राप्त झाले.',
       'या कथेचा आपल्या दैनंदिन जीवनाशी थेट संबंध आहे. नवनिर्माणाच्या किंवा शिक्षणाच्या प्रक्रियेत सुरुवातीलाच सुंदर निकाल मिळत नाहीत; आधी चुका, अडचणी, संघर्ष आणि अपयशाचे विष पचवावे लागते.',
@@ -1615,6 +1647,11 @@ export const ARTICLE_PAGES_CONTENT: Record<number, ArticlePageData> = {
     section: 'अध्यात्म',
     categoryTag: 'अध्यात्म',
     quickSummary: 'Inner churning: shedding arrogance, admitting errors honestly, and evolving into a compassionate person.',
+    image: {
+      src: '/images/articles/p62_inner_manthan.png',
+      alt: 'Inner reflection, overcoming ego, and self-transformation',
+      caption: 'अंतर्मनाचे मंथन : स्वतःला एक चांगला, प्रामाणिक व संवेदनशील माणूस बनवणे (Inner Manthan & Mindfulness)'
+    },
     marathiParagraphs: [
       'आजच्या युगातील सर्वात मोठी समस्या अशी आहे की आपल्याला अमृत हवे असते, पण मंथन नको असते! आपल्याला यश हवे असते, पण चुका किंवा अपयश स्वीकारण्याची तयारी नसते.',
       'मंथन म्हणजे केवळ विचार करणे नव्हे, तर स्वतःच्या चुका मान्य करणे, "मला सगळे येते" हा अहंकार सोडणे, आणि इतरांकडून नम्रपणे शिकणे होय.',
@@ -1665,6 +1702,11 @@ export const ARTICLE_PAGES_CONTENT: Record<number, ArticlePageData> = {
     section: 'अध्यात्म',
     categoryTag: 'अध्यात्म',
     quickSummary: 'The daily battlefield in our minds: ego vs love, convenience vs truth, and testing genuine bonds in hard times.',
+    image: {
+      src: '/images/articles/p63_kurukshetra_chariot.png',
+      alt: 'Kurukshetra chariot and war illustration',
+      caption: 'कलियुगातील कुरुक्षेत्र : विचारांचे आणि नात्यांचे अंतर्गत युद्ध (Modern Kurukshetra of the Mind)'
+    },
     marathiParagraphs: [
       'महाभारत संपले, युद्धाचा कोलाहल शांत झाला. परंतु एक अस्वस्थ करणारा प्रश्न उरला: "या महासंहारात नेमके जिंकले कोण?" कारण विजयाची किंमत जर स्वतःचीच माणसे, बंधू, आणि मनाची कायमची शांतता गमावणे असेल, तर त्याला विजय म्हणायचे का?',
       'आज आपल्या हातात तलवारी किंवा धनुष्यबाण नाहीत; पण शब्दांचे टोकदार बाण, संशयाचे ढग, आणि अहंकाराच्या भिंती नक्कीच आहेत. आजचे कुरुक्षेत्र हे घराच्या चार भिंतींत आणि माणसाच्या मनात रोज लढले जाते.',
@@ -1815,3 +1857,4 @@ export function getArticlePageData(pageNumber: number): ArticlePageData {
     ]
   };
 }
+
