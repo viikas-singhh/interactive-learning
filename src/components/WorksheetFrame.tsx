@@ -1,11 +1,12 @@
 import React from 'react';
-import { Volume2, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Volume2, Sparkles, CheckCircle2, RotateCcw } from 'lucide-react';
 
 interface Props {
   pageNumber: number;
   categoryTag?: string;
   categoryMarathi?: string;
   audioPromptText?: string;
+  onReset?: () => void;
   children: React.ReactNode;
 }
 
@@ -13,6 +14,7 @@ export const WorksheetFrame: React.FC<Props> = ({
   pageNumber,
   categoryTag = 'उमलताना',
   audioPromptText,
+  onReset,
   children
 }) => {
   const handleSpeak = () => {
@@ -90,9 +92,21 @@ export const WorksheetFrame: React.FC<Props> = ({
           <span>🪔</span>
         </div>
 
-        <div className="text-right text-slate-500">
-          Workbook Quest
-        </div>
+        {onReset ? (
+          <button
+            type="button"
+            onClick={onReset}
+            className="flex items-center gap-1 px-2.5 py-1 rounded-xl border-2 border-slate-900 bg-rose-50 hover:bg-rose-100 text-rose-950 font-black text-[11px] shadow-2xs transition-transform active:scale-95 cursor-pointer"
+            title="Reset answers on this page for the next student"
+          >
+            <RotateCcw className="w-3 h-3 text-rose-700" />
+            <span>Reset Page</span>
+          </button>
+        ) : (
+          <div className="text-right text-slate-500">
+            Workbook Quest
+          </div>
+        )}
       </div>
     </div>
   );

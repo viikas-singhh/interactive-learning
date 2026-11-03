@@ -4,7 +4,7 @@ import { PageEntry } from '../data/allPagesData';
 import { getArticlePageData } from '../data/articlePagesContent';
 import { 
   BookOpen, Sparkles, CheckCircle2, XCircle, 
-  HelpCircle, Award, Compass, Heart, Lightbulb, Check
+  HelpCircle, Award, Compass, Heart, Lightbulb, Check, RotateCcw
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -14,6 +14,7 @@ interface Props {
   onUpdate: (field: string, value: any) => void;
   isCompleted: boolean;
   onComplete?: () => void;
+  onReset?: () => void;
 }
 
 export const ArticlePageViewer: React.FC<Props> = ({
@@ -21,7 +22,8 @@ export const ArticlePageViewer: React.FC<Props> = ({
   data,
   onUpdate,
   isCompleted,
-  onComplete
+  onComplete,
+  onReset
 }) => {
   const article = getArticlePageData(pageEntry.pageNumber);
   const reaction = data.reaction || '';
@@ -75,6 +77,7 @@ export const ArticlePageViewer: React.FC<Props> = ({
       pageNumber={pageEntry.pageNumber}
       categoryTag={article.categoryTag || pageEntry.section}
       audioPromptText={audioPrompt}
+      onReset={onReset}
     >
       <div className="space-y-6 font-friendly text-slate-900">
         {/* Title Header */}
@@ -211,15 +214,29 @@ export const ArticlePageViewer: React.FC<Props> = ({
                 </div>
               </div>
 
-              {/* Score Badge */}
-              <div className={`px-3 py-1.5 rounded-full border-2 font-black text-xs sm:text-sm flex items-center gap-1.5 ${
-                isQuizFinished 
-                  ? 'bg-emerald-400 border-emerald-800 text-slate-900 shadow-sm animate-bounce' 
-                  : 'bg-white border-indigo-300 text-indigo-900'
-              }`}>
-                <Award className="w-4 h-4 text-amber-600 fill-current" />
-                <span>Score: {correctCount} / {totalQuestions}</span>
-                {isQuizFinished && <span>🌟 Excellent!</span>}
+              {/* Score & Reset Controls */}
+              <div className="flex items-center gap-2">
+                <div className={`px-3 py-1.5 rounded-full border-2 font-black text-xs sm:text-sm flex items-center gap-1.5 ${
+                  isQuizFinished 
+                    ? 'bg-emerald-400 border-emerald-800 text-slate-900 shadow-sm animate-bounce' 
+                    : 'bg-white border-indigo-300 text-indigo-900'
+                }`}>
+                  <Award className="w-4 h-4 text-amber-600 fill-current" />
+                  <span>Score: {correctCount} / {totalQuestions}</span>
+                  {isQuizFinished && <span>🌟 Excellent!</span>}
+                </div>
+
+                {onReset && (
+                  <button
+                    type="button"
+                    onClick={onReset}
+                    className="px-3 py-1.5 rounded-full border-2 border-slate-900 bg-white hover:bg-rose-50 text-rose-800 font-black text-xs flex items-center gap-1 transition-all shadow-2xs active:scale-95 cursor-pointer"
+                    title="Reset quiz answers for the next student"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5 text-rose-700" />
+                    <span>Reset Quiz</span>
+                  </button>
+                )}
               </div>
             </div>
 
@@ -350,6 +367,17 @@ export const ArticlePageViewer: React.FC<Props> = ({
               <span>💬</span>
               <span>How did this page inspire you? (तुमची प्रतिक्रिया द्या):</span>
             </span>
+            {onReset && (
+              <button
+                type="button"
+                onClick={onReset}
+                className="text-[11px] font-black text-rose-700 hover:text-rose-900 flex items-center gap-1 cursor-pointer transition-colors"
+                title="Reset answers on this page for the next student"
+              >
+                <RotateCcw className="w-3 h-3" />
+                <span>Reset Page</span>
+              </button>
+            )}
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
